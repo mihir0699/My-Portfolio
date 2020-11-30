@@ -80,3 +80,117 @@
   justify-content: center;
   grid-column-gap: 1rem;
 }
+
+.headings {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  margin-left: 10rem;
+  margin-right: 15rem;
+}
+
+.work_exp {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.duration {
+  color: grey;
+  font-weight: 400;
+}
+
+.work_exp_div {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.work_exp_list > li {
+  margin: 1rem auto;
+}
+
+.project_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Montserrat", sans-serif;
+}
+.project_div > div {
+  margin: 1rem;
+}
+
+.project_div > div > h4 {
+  font-weight: 200;
+}
+
+.project_video {
+  height: 600;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+}
+
+.education {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.education > div {
+  background-color: #d3d3d3;
+  margin: 1rem;
+  padding: 1rem;
+}
+.education > div:hover {
+  transform: scale(1.02);
+}
+
+.contact_div {
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 1rem;
+}
+.contact_div > div {
+  padding: 1rem;
+}
+
+.input_field {
+  width: 70%;
+  height: 1rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+input {
+  font-family: "Montserrat", sans-serif;
+  margin: 0.5rem;
+}
+.contact_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.message {
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 3rem;
+  margin: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border: none;
+}
+
+.button_submit {
+  width: 10rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: #2c98f0;
+  color: white;
+  border: none;
+  height: 2rem;
+  outline: none;
+}

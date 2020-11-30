@@ -3,4 +3,23 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .headings {
+    text-align: center;
+    margin-left: 0;
+  }
+  .work_exp {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .image_work_ex {
+    margin-bottom: 0rem;
+  }
+  .work_exp_div {
+    margin: 1rem;
+  }
+  .project_div {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
 }
