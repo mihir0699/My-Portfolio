@@ -22,4 +22,18 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
   }
+  .contact_grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .form {
+    margin: 1rem;
+  }
+  .intro_info {
+    margin: 1rem;
+  }
+  .education {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
