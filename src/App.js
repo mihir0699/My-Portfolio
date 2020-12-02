@@ -13,6 +13,14 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink
+} from './NavbarElements';
 
 import {formSubmit} from './firebase/formSubmit'
 import './App.css';
@@ -97,6 +105,37 @@ const handleSubmit = async(e)=>{
   return (     
     <Router>
     <div className="App">
+      <div className="nav_hide">
+    <Nav className="nav_width">
+        <NavLink to='/' className="nav_head" onClick={()=>{about_ref.current.scrollIntoView({behavior:'smooth',block:'center'})}}>
+        Mihir Gupta
+        </NavLink>
+   
+        <NavMenu>
+          <NavLink to='/' onClick={()=>{about_ref.current.scrollIntoView({behavior:'smooth',block:'center'})}}>
+            About Me
+          </NavLink>
+          <NavLink to='/' onClick={()=>{skills_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
+            Skills
+          </NavLink>
+          <NavLink to='/' onClick={()=>{experience_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
+            Work Experience
+          </NavLink>
+          <NavLink to='/' onClick={()=>{projects_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
+            Projects
+          </NavLink>
+          <NavLink to='/' onClick={()=>{education_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
+            Education
+          </NavLink>
+          <NavLink to='/' onClick={()=>{contact_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}} style={{paddingRight:'2rem'}}>
+            Contact Me
+          </NavLink>
+          {/* Second Nav */}
+          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+        </NavMenu>
+       
+      </Nav>
+      </div>
     <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
@@ -113,32 +152,32 @@ const handleSubmit = async(e)=>{
             </li>
         
                 <li className="nav-text">
-                  <Link onClick={showSidebar} onClick={()=>{about_ref.current.scrollIntoView({behavior:'smooth'})}}>
+                  <Link onClick={showSidebar} onClick={()=>{about_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
                         <span>About Me</span>
                   </Link>
                 </li>
                 <li className="nav-text">
-                <Link  onClick={showSidebar} onClick={()=>{skills_ref.current.scrollIntoView({behavior:'smooth'})}}>
+                <Link  onClick={showSidebar} onClick={()=>{skills_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
                         <span>Skills</span>
                   </Link>
                 </li>
                 <li className="nav-text">
-                <Link  onClick={showSidebar} onClick={()=>{experience_ref.current.scrollIntoView({behavior:'smooth'})}}>
+                <Link  onClick={showSidebar} onClick={()=>{experience_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
                         <span>Work Experience</span>
                   </Link>
                 </li>
                 <li className="nav-text">
-                <Link  onClick={showSidebar} onClick={()=>{projects_ref.current.scrollIntoView({behavior:'smooth'})}}>
+                <Link  onClick={showSidebar} onClick={()=>{projects_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
                         <span>Projects</span>
                   </Link>
                 </li>
                 <li className="nav-text">
-                <Link  onClick={showSidebar} onClick={()=>{education_ref.current.scrollIntoView({behavior:'smooth'})}}>
+                <Link  onClick={showSidebar} onClick={()=>{education_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
                         <span>Education</span>
                   </Link>
                 </li>
                 <li className="nav-text">
-                <Link  onClick={showSidebar} onClick={()=>{contact_ref.current.scrollIntoView({behavior:'smooth'})}}>
+                <Link  onClick={showSidebar} onClick={()=>{contact_ref.current.scrollIntoView({behavior:'smooth', block:'center'})}}>
                         <span>Contact Me</span>
                   </Link>
                 </li>
@@ -151,7 +190,7 @@ const handleSubmit = async(e)=>{
 
   
        <ToastContainer />
-       <div ref={about_ref}>
+       <div ref={about_ref} className="intro_div_class">
        <h1 className="headings">
           About me
         </h1>
@@ -162,8 +201,10 @@ const handleSubmit = async(e)=>{
         <span className="intro_head">Hi, myself Mihir</span><br/>
         <br/> I am a passionate and self taught MERN Stack developer and a competitive programmer. I am currently a third year computer science student pursuing Bachelor of Technology at JSS Academy of Technical Education, Noida. 
          In my free time you will find me playing Among us 🤪 or scrolling <a href="https://twitter.com/mihir0699" target="_blank" className="twitter"> Twitter </a> 🤳. 
+         <br/>
+        <a href="https://drive.google.com/file/d/1IOu6mtGUaGAChfOjg3IXgw1LiaI6PQoA/view?usp=sharing" target="_blank" > <button class="resume">Resume</button></a>
         </div>
-
+    
         <div>
         <a href="https://github.com/mihir0699" target="_blank">  <img src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
       <a href="https://www.instagram.com/mihir_gupta_1" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
@@ -236,18 +277,17 @@ const handleSubmit = async(e)=>{
     {({ inView, ref, entry }) => (
       <div ref={projects_ref}>
       <motion.h1 className="headings" variants={icons} initial="hidden" animate={inView ? "animate": "hidden" } ref={ref}>Projects</motion.h1>
-      <motion.div  className="project_div" variants={icons} initial="hidden" animate={inView ? "animate": "hidden" } ref={ref}>
-  
-  <div>
-  <iframe src="https://drive.google.com/file/d/1sT9i97057c3DhiQMBmvGTPVhsNxVtpW6/preview" width="500" height="380" className="project_video"></iframe>
+      <motion.div  className="project_grid" variants={icons} initial="hidden" animate={inView ? "animate": "hidden" } ref={ref}>
+  <div >
+  <iframe src="https://drive.google.com/file/d/1sT9i97057c3DhiQMBmvGTPVhsNxVtpW6/preview" width="90%" height={window.innerWidth>768 ? "380": "300" } className="project_video"></iframe>
   <h2 style={{fontFamily:'Montserrat'}}><a href="https://github.com/mihir0699/FoodEazy" target="_blank" className="links">Food Eazy</a></h2>
-  <h4>Developed an online platform for food ordering to ease the process of placing order for customers and
+  <h4 className="project_desc">Developed an online platform for food ordering to ease the process of placing order for customers and
 receive orders for restaurant owners. It was built using MERN Stack and PayTM API.</h4>
   </div>
   <div>
-  <iframe src="https://drive.google.com/file/d/1pVAEUQSeJukN2kWKZCmXtPa7W3IDGpew/preview" width="500" height="380"  className="project_video"></iframe>
+  <iframe src="https://drive.google.com/file/d/1pVAEUQSeJukN2kWKZCmXtPa7W3IDGpew/preview" width="90%" height={window.innerWidth>768 ? "380" : "300" }  className="project_video"></iframe>
   <h2 style={{fontFamily:'Montserrat'}}><a href="https://github.com/mihir0699/Insta-Poll" target="_blank" className="links">Insta Poll</a></h2>
-  <h4>Developed a Real-Time Polling website using React.js and Firebase that eases the process of creating polls
+  <h4 className="project_desc">Developed a Real-Time Polling website using React.js and Firebase that eases the process of creating polls
 and sharing them across multiple social platforms.
 </h4>
   </div>
@@ -264,12 +304,12 @@ and sharing them across multiple social platforms.
   <div>
 <h3>Bachelor of Technology</h3>
 <h3>JSS Academy of Technical Education</h3>
-<span>August 2018- Present</span>
+<span className="duration_work">August 2018- Present</span>
 </div>
 <div>
 <h3>Senior Secondary Education</h3>
 <h3>S.S.K.L.A.Mem.Bal Viday Mandir, Jalaun, UP</h3>
-<span>August 2018- Present</span>
+<span className="duration_work">2016-2017</span>
 </div>
 </div>
 
@@ -294,9 +334,9 @@ and sharing them across multiple social platforms.
   </div>
   </div>
 
-  <div>
+  <div className="conact_div_styles">
     <form className="form" onSubmit={handleSubmit} ref={form_ref}>
-<input type="text" className="input_field" placeholder="Name" required onChange={(e)=>{setForm({...form, name: e.target.value})}}></input>
+<input type="text" className="input_field contact_div_styles1" placeholder="Name" required onChange={(e)=>{setForm({...form, name: e.target.value})}}></input>
 <input type="email" className="input_field" placeholder="Email" required onChange={(e)=>{setForm({...form, email: e.target.value})}}></input>
 <textarea className="message" type="text" placeholder="Message" required onChange={(e)=>{setForm({...form, message: e.target.value})}}></textarea>
 <br/>

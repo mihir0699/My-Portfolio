@@ -5,7 +5,31 @@
   }
   .headings {
     text-align: center;
-    margin-left: 0;
+    margin: auto;
+    font-size: 1.4sssrem;
+  }
+  .intro {
+    padding: 0;
+    margin: 1rem;
+    font-size: 1rem;
+  }
+  .image {
+    margin-bottom: 1rem;
+  }
+  .intro_div_class {
+    padding: 0;
+    margin-top: 2rem;
+  }
+  .intro_info {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .intro_head {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  .headings > h1 {
+    margin: 1rem;
   }
   .work_exp {
     display: grid;
@@ -29,11 +53,44 @@
   .form {
     margin: 1rem;
   }
-  .intro_info {
-    margin: 1rem;
-  }
+
   .education {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+  .navbar {
+    display: block;
+    float: left;
+  }
+  .nav_hide {
+    display: none;
+  }
+  .project_grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 1rem;
+  }
+  .work_exp_div {
+    margin-top: 0;
+  }
+  .work_exp_div > h2 {
+    font-size: 1.4rem;
+  }
+  .duration {
+    font-size: 1.1rem;
+  }
+  .contact_div {
+    font-size: 1.2rem;
+  }
+  .contact_div > div {
+    margin: 0;
+    padding: 0.5rem;
+  }
+  .conact_div_styles {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .contact_div_styles1 {
+    margin-top: 0;
   }
 }
