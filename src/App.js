@@ -146,7 +146,7 @@ const handleSubmit = async(e)=>{
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{zIndex:'1000'}}>
           <ul className='nav-menu-items' >
             <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
+              <Link to='#' className='menu-bars1'>
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
@@ -208,7 +208,7 @@ const handleSubmit = async(e)=>{
         <div>
         <a href="https://github.com/mihir0699" target="_blank">  <img src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
       <a href="https://www.instagram.com/mihir_gupta_1" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
-      <a href="https://www.linkedin.com/in/mihir0699/" target="_blank"> <img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a>
+      <a href="https://www.linkedin.com/in/mihir0699/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a>
         </div>
        
       </motion.div>

@@ -144,6 +144,7 @@
   font-size: 1.5rem;
   text-align: left;
   margin: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 .contact_div > div {
   padding: 1rem;
@@ -221,7 +222,14 @@ input {
 .menu-bars {
   margin-left: 2rem;
   font-size: 2rem;
-  background: none;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 20%;
+}
+
+.menu-bars1 {
+  margin-left: 2rem;
+  font-size: 2rem;
 }
 
 .nav-menu {
