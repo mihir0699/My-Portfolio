@@ -5,6 +5,6 @@
 This is my portfolio which I have built using React.js, Ant Design, Framer Motion.
 Please feel free to suggest improvements 😀
 
-**Portfolio Link**- https://portfolio-cdf0a.web.app/
+**Portfolio Link**- https://mihir-gupta.web.app/
 
 ### A 🌟 on this repo would be appreciated!
