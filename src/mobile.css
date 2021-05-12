@@ -6,7 +6,8 @@
   .headings {
     text-align: center;
     margin: auto;
-    font-size: 1.4sssrem;
+
+    margin-top: 1.5rem;
   }
   .intro {
     padding: 0;
@@ -92,5 +93,12 @@
   }
   .contact_div_styles1 {
     margin-top: 0;
+  }
+  .flip-card-back {
+    font-size: 1.2rem;
+  }
+  #mongo_icon {
+    height: 4rem;
+    width: 6rem;
   }
 }

@@ -32,15 +32,29 @@
 }
 
 .my_image {
-  height: 20rem;
-  border-radius: 20%;
+  height: 15rem;
+  border-radius: 50%;
+  position: relative;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+}
+.image::after {
+  background: linear-gradient(red, blue);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15rem;
+  content: "";
+  z-index: 3;
 }
 .image {
   transition: All 0.5s ease-in;
-}
-
-.image:hover {
-  transform: scale(1.05);
+  position: relative;
+  background: linear-gradient(to left, #743ad5, #d53a9d);
+  border-top-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+  border-bottom-left-radius: 10%;
+  border-top-right-radius: 10%;
 }
 
 .intro_info {
@@ -63,18 +77,61 @@
   color: blue;
 }
 
-.skills_icon:hover {
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-}
-
 .skills_icons {
   margin: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
   justify-content: center;
   grid-column-gap: 1rem;
 }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.skills_icon:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+/* Style the back side */
+.flip-card-back {
+  color: black;
+  transform: rotateY(180deg);
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  height: 96px;
+  text-align: center;
+  line-height: 96px;
+  margin: auto;
+}
+
+.skills_icon > img {
+  height: 96px;
+}
+.timeline {
+  font-family: "Montserrat", sans-serif;
+}
+.timeline::before {
+  background: #bebebe;
+}
 .headings {
   font-family: "Montserrat", sans-serif;
   text-align: left;
@@ -86,6 +143,10 @@
 .work_exp {
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
+
+.flip-card-front > img {
+  height: 96px;
 }
 
 .duration {
@@ -220,11 +281,11 @@ input {
 }
 
 .menu-bars {
-  margin-left: 2rem;
-  font-size: 2rem;
-  background: white;
-  padding: 0.5rem;
-  border-radius: 20%;
+  margin-left: 1rem;
+  background: #060b26;
+  padding: 0.7rem 1rem;
+  padding-top: 0.9rem;
+  border-radius: 50%;
 }
 
 .menu-bars1 {
@@ -309,15 +370,59 @@ span {
   margin: 0.5rem;
   border-radius: 3px;
   margin-top: 2rem;
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  transition: all 0.5s;
 }
 
 .resume:hover {
   cursor: pointer;
+  transform: translateY(-2px);
+}
+.resume2 {
+  width: 8rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: #2c98f0;
+  color: white;
+  border: none;
+  height: 2.2rem;
+  outline: none;
+  margin: 0.5rem;
+  margin-left: 0;
+  border-radius: 3px;
+  margin-top: 1rem;
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  transition: all 0.5s;
+}
+
+.resume2:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+.resume1 {
+  width: 4rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: #2c98f0;
+  color: white;
+  border: none;
+  height: 2.2rem;
+  outline: none;
+  margin: 0.5rem;
+  margin-bottom: 0;
+  border-radius: 3px;
+  margin-top: 1rem;
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  transition: all 0.5s;
+}
+
+.resume1:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
 }
 
 .nav_head {
-  font-size: 1.6rem;
-  padding-left: 4rem;
+  font-size: 1.5rem;
+  margin-left: 3rem;
 }
 .nav_hide {
   width: 100%;
@@ -328,11 +433,56 @@ span {
 
 .project_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 550px;
+  column-gap: 2rem;
+  margin-left: 1rem;
+  row-gap: 1.5rem;
+  margin-right: 1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
 
 .project_desc {
   font-weight: 300;
+  padding: 0.3rem 0rem;
+  margin-bottom: 0;
+}
+
+.social_icons {
+  height: 32px;
+  margin: 0.3rem;
+  transition: all 0.5s;
+}
+.social_icons:hover {
+  transform: translateY(-2px);
+}
+.social_icons:hover {
+  box-shadow: 0 2px 35px hsla(0, 0%, 0%, 0.2);
+}
+
+.project_disc_internal {
+  text-align: left;
+  margin: auto;
+  width: 90%;
+  border-radius: 2%;
+  padding: 10px;
+}
+.project_disc_internal h2 {
+  margin: 0.3rem auto;
+  margin-bottom: 0;
+}
+
+.project_css {
+  border: 4px solid transparent;
+  border-radius: 50px;
+  -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+  border-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+
+  border-image-slice: 1;
+}
+a {
+  color: white;
+  text-decoration: none;
 }
